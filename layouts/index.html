@@ -4,8 +4,7 @@
             {{ .Content }}
         </div>
         <div>
-            <p id="last-post-intro">Last post:</p>
-            {{ range first 1 .Pages }}
+            {{ range .Pages }}
                 <a href="{{.Permalink}}" class="row">
                     <div id="post-date">
                         <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "02 Jan 2006" }}</time>
@@ -14,7 +13,7 @@
                         {{ .Title }}
                     </div>
                     <div id="post-summary">
-                        {{ .Summary }}
+                        {{ .Description }}
                     </div>
                 </a>
             {{ end }}
