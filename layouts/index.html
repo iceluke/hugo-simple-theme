@@ -1,0 +1,23 @@
+{{ define "main" }}
+    <main id="main">
+        <div class="homepage-content">
+            {{ .Content }}
+        </div>
+        <div>
+            <p id="last-post-intro">Last post:</p>
+            {{ range first 1 .Pages }}
+                <a href="{{.Permalink}}" class="row">
+                    <div id="post-date">
+                        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "02 Jan 2006" }}</time>
+                    </div>
+                    <div id="post-title">
+                        {{ .Title }}
+                    </div>
+                    <div id="post-summary">
+                        {{ .Summary }}
+                    </div>
+                </a>
+            {{ end }}
+        </div>
+    </main>
+{{ end }}

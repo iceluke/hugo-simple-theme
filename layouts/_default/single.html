@@ -1,0 +1,14 @@
+{{ define "main" }}
+<section id="main">
+    <div id="single-top-div">
+        <h3 id="single-top-title">{{ .Title }}</h1>
+        <p id="single-top-date">{{ .Date.Format "Jan, 02 2006" }}</p>
+    </div>
+    <hr>
+    <div>
+        <article id="content">
+            {{ .Content }}
+        </article>
+    </div>
+</section>
+{{ end }}
